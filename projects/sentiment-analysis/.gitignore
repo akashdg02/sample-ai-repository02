@@ -1,0 +1,5 @@
+venv_a/
+__pychace__/
+*.pyc
+ipynb_checkpoints/
+*.log
