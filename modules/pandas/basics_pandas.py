@@ -13,20 +13,20 @@ data = {
 
 df = pd.DataFrame(data)
 
-print("\n1. DataSet")
-print(df)
+# print("\n1. DataSet")
+# print(df)
 
-print("\n2. Info")
-print(df.info())
+# print("\n2. Info")
+# print(df.info())
 
 print("\n3. Statistics ")
 print(df.describe())
 
-print("\n4. Value counts")
-print("\nSentiment Distribution:")
-print(df['sentiment'].value_counts())
+# print("\n4. Value counts")
+# print("\nSentiment Distribution:")
+# print(df['sentiment'].value_counts())
 
-print("\n5. Filtering")
-high_score = df[df['score'] > 0.90]
-print("\nHigh Confidence Samples:")
-print(high_score)
+# print("\n5. Filtering")
+# high_score = df[df['score'] > 0.90]
+# print("\nHigh Confidence Samples:")
+# print(high_score)
