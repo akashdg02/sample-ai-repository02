@@ -1,7 +1,7 @@
 """
 Sentiment Analysis using Transformers
 """
-
+import torch
 from transformers import pipeline
 
 #Loading Pretrained sentiment analysis model
