@@ -2,7 +2,6 @@
 Global Styles
 ==============================*/ 
 :root{
-
     /* Colors */
     --primary-bg : #FFFFFF;
     --secondary-bg : #f7f7f8;
@@ -18,20 +17,16 @@ Global Styles
     --accent-hover:#0D8C6C;
     --danger-color:#EF4444;
     --code-bg:#f4f4f4;
-
     /* Spacing */
     --sidebard-width: 260px;
     --header-height: 60px;
     --message-max-width: 800px;
-
     /* Shadows */
     --shadow-sm : 0 1px 2px rgba(0, 0, 0, 0.05);
     --shadow-md : 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg : 0 10px 15px rgba(0, 0, 0, 0.15);
-    
     /* Transitions */
     --trasition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
 } 
 
 *{
@@ -90,4 +85,202 @@ SIDEBAR
 
 .new-chat-btn:hover{
     background-color: var(--sidebar-hover);
+}
+
+.chat-history{
+    flex:1;
+    overflow-y: auto;
+    padding: 8px;
+}
+
+.chat-history-item{
+    padding: 12px 16px;
+    margin-bottom: 4px;
+    border-radius: 6px;
+    color: #ECECF1;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--trasition);
+    display: flex;
+    align-items: center;
+    gap:10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chat-history-item:hover{
+    background-color: var(--sidebar-hover);
+}
+
+.chat-history-item.active{
+    background-color: var(--sidebar-hover);
+}
+
+.chat-history-item i{
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.sidebar-footer{
+    padding: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-profile{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border-radius: 6px;
+    color: #ECECF1;
+    cursor: pointer;
+    transition: var(--trasition);
+}
+
+.user-profile:hover{
+    background-color: var(--sidebar-hover);
+}
+
+.user-avatar{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.user-info{
+    flex:1;
+}
+
+.user-name{
+    font-size:14px;
+    font-weight: 500;
+}
+
+.user-email{
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.main-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-bg);
+}
+
+.chat-header{
+    height: var(--header-height);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    background-color: var(--primary-bg)
+}
+
+.header-left{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.sidebar-toggle{
+    display: none;
+    background: none;
+    border:none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text-primary);
+    padding: 8px;
+}
+
+.chat-title{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.model-selector{
+    padding: 6px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--trasition);
+}
+
+.model-selector:hover{
+    border-color: var(--secondary-bg);
+}
+
+.header-actions{
+    display: flex;
+    gap:8px;
+}
+
+.header-btn{
+    padding: 8px 16px;
+    background:none;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--trasition);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+.header-btn:hover{
+    background-color: var(--secondary-bg);
+}
+/*============================
+Responsive Web Designing
+==============================*/    
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        z-index: 1000;
+        box-shadow: var(--shadow-lg);
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+}
+
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.sidebar-overlay.active {
+    display: block;
 }
