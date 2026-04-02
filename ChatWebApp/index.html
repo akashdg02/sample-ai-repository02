@@ -31,14 +31,14 @@
 
        
         <div class="app-container">
-            <aside class="sidebar">
+            <aside class="sidebar" id="sidebar">
                 <div class="sidebar-header">
-                    <button class="new-chat-btn">
+                    <button class="new-chat-btn" id="newChatBtn">
                         <i class="fas fa-plus"></i> New Chat
                     </button>
                 </div>
 
-                <div class="chat-history">
+                <div class="chat-history" id="chatHistory">
 
 
                 </div>
@@ -54,32 +54,32 @@
                 </div>
             </aside>
 
-            <div class="sidebar-overlay"></div>
+            <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
             <main class="main-content">
                 <header  class="chat-header">
                     <div class="header-left">
-                        <button class="sidebar-toggle">
+                        <button class="sidebar-toggle" id="sidebarToggle">
                             <i class="fas fa-bars"></i>
                         </button>
-                        <div class="chat-title">New Chat</div>
+                        <div class="chat-title" id="chatTitle">New Chat</div>
                     </div>
                     <div class="header-actions">
-                        <select class="model-selector">
+                        <select class="model-selector" id="modelSelector">
                             <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
                             <option value="groq">Groq</option>
                             <option value="ollama">Ollama</option>
                         </select>
-                        <button class="header-btn">
+                        <button class="header-btn"  id="clearChatBtn">
                             <i class="fas fa-trash"></i>
                             Clear
                         </button>
                     </div>
                 </header>
 
-                <div class="messages-container">
-                    <div class="messages-wrapper">
-                        <!-- <div class="welcome-screen">
+                <div class="messages-container" id="messagesContainer">
+                    <div class="messages-wrapper" id="messagesWrapper">
+                        <div class="welcome-screen" id="welcomeScreen">
                             <h2 class="welcome-title">How can I help you today?</h2>
                             <p class="welcome-subtitle">
                                 Ask me anything or choose from the suggestions below
@@ -103,9 +103,9 @@
                                     <p>Help me plan a 7-day trip to Mysore</p>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                         <!-- Messages will appear here-->
-                        <div class="message user">
+                        <!-- <div class="message user">
                             <div class="message-header">
                                 <div class="message-avatar">JD</div>
                                 <span class="message-sender">You</span>
@@ -115,6 +115,36 @@
                                 Hello! Can you help me understand how react hooks work?
                             </div>
                         </div>
+
+                        <div class="message assistant">
+                            <div class="message-header">
+                                <div class="message-avatar">AI</div>
+                                <span class="message-sender">AI Assistant</span>
+                                <span class="message-time">10:31 AM</span>
+                            </div>
+                            <div class="message-content">
+                                I'd be happy to help you understand React Hooks! React Hooks are functions that let you use state and other React features without writing a class. They were introduced in React 16.8 to make it easier to manage state and side effects in functional components. The most commonly used hooks are useState, useEffect, and useContext.
+                                <br><br>
+                                React Hooks are a powerful way to manage state and side effects in your React applications. They allow you to write cleaner and more reusable code, and they make it easier to share logic between components. If you have any specific questions about how to use React Hooks or if you'd like to see some examples, feel free to ask!
+                                <br><br>
+                                <pre>
+<code>// Example of a simple useState hook
+import React, { useState } from 'react';
+
+function Counter() {
+const [count, setCount] = useState(0);
+return (
+    &lt;div&gt;
+        &lt;p&gt;You clicked {count} times&lt;/p&gt;
+        &lt;button onClick={() => setCount(count + 1)}&gt;
+            Click me
+        &lt;/button&gt;
+    &lt;/div&gt;
+    );
+}</code>
+                                </pre>
+                            </div>
+                        </div> -->
 
 
                         <div class="typing-indicator" id="typingIndicator">
@@ -129,12 +159,12 @@
                 <div class="input-area">
                     <div class="input-wrapper">
                         <div class="input-container">
-                            <textarea class="message-input" placeholder="Message AI..." rows="1"></textarea>
+                            <textarea class="message-input" id="messageInput" placeholder="Message AI..." rows="1"></textarea>
                             <div class="input-actions">
-                                <button class="attach-btn" title="Attach File">
+                                <button class="attach-btn" id="attachBtn" title="Attach File">
                                     <i class="fas fa-paperclip"></i>
                                 </button>
-                                <button class="send-btn" disabled>
+                                <button class="send-btn" id="sendBtn" disabled>
                                     <i class="fas fa-paper-plane"></i>
                                 </button>
                             </div>
